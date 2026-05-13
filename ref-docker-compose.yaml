@@ -1,0 +1,17 @@
+services:
+  arma-server:
+    image: ipshosting/game-arma3:v3
+    ports:
+      - "2302:2302/udp"  # game-port
+      - "2303:2303/udp"  # steam-query
+      - "2304:2304/udp"  # steam-master
+      - "2305:2305/udp"  # voip
+      - "2306:2306/udp"  # battleye
+    environment:
+      MODS:
+      EXTRACT_MOD_KEYS: true
+      STEAM_USERNAME: servererrr
+      STEAM_PASSWORD: G#S68YoHdNQnSzbM
+      LIMIT_FPS: 500
+    volumes:
+      - ./server:/home/ips-hosting
